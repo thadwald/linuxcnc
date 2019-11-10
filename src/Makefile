@@ -1000,6 +1000,12 @@ genserkins-objs := emc/kinematics/genserkins.o
 genserkins-objs += libnml/posemath/gomath.o
 genserkins-objs += libnml/posemath/sincos.o $(MATHSTUB)
 
+obj-m += genser-switchkins.o
+genser-switchkins-objs := emc/kinematics/genser-switchkins.o
+genser-switchkins-objs += libnml/posemath/gomath.o
+genser-switchkins-objs += libnml/posemath/sincos.o $(MATHSTUB)
+genser-switchkins-objs += emc/kinematics/kins_util.o
+
 obj-m += pentakins.o
 pentakins-objs := emc/kinematics/pentakins.o
 pentakins-objs += libnml/posemath/_posemath.o
@@ -1024,9 +1030,17 @@ obj-m += xyzac-trt-kins.o
 xyzac-trt-kins-objs := emc/kinematics/xyzac-trt-kins.o
 xyzac-trt-kins-objs += emc/kinematics/kins_util.o
 
+obj-m += xyzac-trt-switchkins.o
+xyzac-trt-switchkins-objs := emc/kinematics/xyzac-trt-switchkins.o
+xyzac-trt-switchkins-objs += emc/kinematics/kins_util.o
+
 obj-m += xyzbc-trt-kins.o
 xyzbc-trt-kins-objs := emc/kinematics/xyzbc-trt-kins.o
 xyzbc-trt-kins-objs += emc/kinematics/kins_util.o
+
+obj-m += xyzbc-trt-switchkins.o
+xyzbc-trt-switchkins-objs := emc/kinematics/xyzbc-trt-switchkins.o
+xyzbc-trt-switchkins-objs += emc/kinematics/kins_util.o
 
 obj-m += rosekins.o
 rosekins-objs := emc/kinematics/rosekins.o
@@ -1147,12 +1161,17 @@ endif
 ../rtlib/lineardeltakins$(MODULE_EXT): $(addprefix objects/rt,$(lineardeltakins-objs))
 ../rtlib/genhexkins$(MODULE_EXT): $(addprefix objects/rt,$(genhexkins-objs))
 ../rtlib/genserkins$(MODULE_EXT): $(addprefix objects/rt,$(genserkins-objs))
+../rtlib/genser-switchkins$(MODULE_EXT): $(addprefix objects/rt,$(genser-switchkins-objs))
 ../rtlib/pentakins$(MODULE_EXT): $(addprefix objects/rt,$(pentakins-objs))
 ../rtlib/pumakins$(MODULE_EXT): $(addprefix objects/rt,$(pumakins-objs))
 ../rtlib/scarakins$(MODULE_EXT): $(addprefix objects/rt,$(scarakins-objs))
 ../rtlib/rotarydeltakins$(MODULE_EXT): $(addprefix objects/rt,$(rotarydeltakins-objs))
+
 ../rtlib/xyzac-trt-kins$(MODULE_EXT): $(addprefix objects/rt,$(xyzac-trt-kins-objs))
+../rtlib/xyzac-trt-switchkins$(MODULE_EXT): $(addprefix objects/rt,$(xyzac-trt-switchkins-objs))
 ../rtlib/xyzbc-trt-kins$(MODULE_EXT): $(addprefix objects/rt,$(xyzbc-trt-kins-objs))
+../rtlib/xyzbc-trt-switchkins$(MODULE_EXT): $(addprefix objects/rt,$(xyzbc-trt-switchkins-objs))
+
 ../rtlib/rosekins$(MODULE_EXT): $(addprefix objects/rt,$(rosekins-objs))
 ../rtlib/scorbot-kins$(MODULE_EXT): $(addprefix objects/rt,$(scorbot-kins-objs))
 ../rtlib/hal_gm$(MODULE_EXT): $(addprefix objects/rt,$(hal_gm-objs))

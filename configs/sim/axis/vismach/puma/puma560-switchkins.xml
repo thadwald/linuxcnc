@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pyvcp>
+
+  <vbox>
+    <relief>"ridge"</relief>
+    <bd>5</bd>
+    <label>
+      <text>"SWITCHKINS"</text>
+      <relief>RIDGE</relief>
+      <bd>3</bd>
+    </label>
+    <multilabel>
+      <legends>["GENSERKINS", " IDENTITY "]</legends>
+      <font>("DejaVu Sans Mono",16)</font>
+      <bg>"black"</bg>
+      <fg>"yellow"</fg>
+    </multilabel>
+    <button>
+      <halpin>"genserkins-button"</halpin>
+      <text>"Genserkins"</text>
+      <bd>3</bd>
+    </button>
+    <button>
+      <halpin>"identity-button"</halpin>
+      <text>"Identity  "</text>
+      <bd>3</bd>
+    </button>
+  </vbox>
+
+</pyvcp>

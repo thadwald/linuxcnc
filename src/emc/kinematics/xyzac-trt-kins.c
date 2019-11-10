@@ -128,6 +128,7 @@ KINEMATICS_TYPE kinematicsType()
 static char *coordinates = REQUIRED_COORDINATES;
 RTAPI_MP_STRING(coordinates, "Axes-to-joints-ordering");
 
+KINS_NOT_SWITCHABLE
 EXPORT_SYMBOL(kinematicsType);
 EXPORT_SYMBOL(kinematicsInverse);
 EXPORT_SYMBOL(kinematicsForward);
